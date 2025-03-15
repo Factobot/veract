@@ -131,6 +131,19 @@ var StringValue : string = StringState.AsStringState[].Get()
 var LogicValue : logic = LogicState.AsLogicState[].Get()
 ```
 
+#### Updating States
+
+You can update states by calling the `Set` method on the state object. For example:
+
+```verse
+FloatState.Set(1.0) # explicit state update
+
+if (State := IntState.AsIntState[]): # implicit state update
+    State.Set(3)
+```
+
+Once set, the state will automatically update all the components and dependencies it is linked to.
+
 ### Generators
 
 Generators in Veract are used to dynamically generate UI components based on state changes. They are useful for creating dynamic lists and other components that need to update based on state.
